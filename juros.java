@@ -6,8 +6,8 @@ public class juros {
     public static void main(String[] args) {
         
         //Declaração de variavel
-        double Juros, Capital, Taxa, Montante;
-        int Tempo;
+        double juros, capital, taxa, montante;
+        int tempo;
 
         //Criação e instância do objeto de entrada e decimal
         Scanner entrada = new Scanner (System.in);
@@ -18,18 +18,28 @@ public class juros {
 
         //Entrada
         System.out.println("Informe a Capital: ");
-        Capital = entrada.nextDouble();
+        capital = entrada.nextDouble();
 
         System.out.println("Informe a Taxa De Juros: ");
-        Taxa = entrada.nextDouble();
+        taxa= entrada.nextDouble();
 
         System.out.println("Informe o Prazo (Meses):");
-        Tempo = entrada.nextDouble();
+        tempo = entrada.nextDouble();
 
+    
         //Calculo do Juros
-        Juros = (Capital * Taxa * Tempo);
-        Montante = (Capital + Juros);
+        juros = (capital * taxa * tempo);
+        montante = (capital + juros);
 
-        
-    }
+        //Saida
+        System.out.println("\n\t -- Resultados --");
+        System.out.println("\t Capital Inicial:\t R$ " + df.format(capital));
+        System.out.println("\t Taxa de Juros:\t\t" + taxa + "% ao mês");
+        System.out.println("\t Periodo:\t\t" + tempo + "Meses");
+        System.out.println("\t Juros Total: \tR$" + df.format(juros) );
+        System.out.println("\t Montante Final: \tR$"+ df.format(montante));
+
+        //Fechar Entrada
+        entrada.close();
+    }   
 }
