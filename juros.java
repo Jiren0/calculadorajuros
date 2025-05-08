@@ -15,5 +15,13 @@ public class juros {
 
         //Apresentação
         System.out.println("\n\t\t\t -- Calculadora de Juros Simples --\n");
+
+        //Entrada
+        System.out.println("Informe a Capital: ");
+        Capital = entrada.nextDouble();
+        System.out.println("Informe a Taxa De Juros: ");
+        Taxa = entrada.nextDouble();
+        System.out.println("Informe o Prazo (Meses):");
+        Tempo = entrada.nextDouble();
     }
 }
