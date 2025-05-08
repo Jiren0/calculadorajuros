@@ -162,13 +162,17 @@ private static void calcularCapital() {
                         "Prazo (n): " + df.format(prazo));
 
     scanner.close();
-                        
-                  
-
-       }
-
-       
-    
-
 }
+
+   //Resultado
+   private static void exibirResultado(String titulo, String... dados) {
+        System.out.println("\n\t\t\t -- Resultado -- \n");
+        System.out.println("Cálculo de " + titulo);
+        
+    //Recebe todos os codigos recebidos
+    for (String dado : dados) {
+        System.out.println(dado);
+    
+        }
+    }
 }
