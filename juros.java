@@ -102,6 +102,38 @@ private static void calcularCapital() {
                     "Capital (c:) R$" + df.format(capital));
 
     scanner.close();
+}
+    //Calcular taxa de juros
+    private static void calcularTaxa(){
+        Scanner scanner = new Scanner(System.in);
+
+        //Titulo e fórmula
+        System.out.println("\nCalculo de taxa de juros (i)");
+        System.out.println("Formula: i = (j * 100) / (c * n)");
+
+        //Calculo da taxa
+        System.out.println("Informe o juros (j): ");
+        double juros = scanner.nextDouble();
+       
+        System.out.println("Informe o capital (c): ");
+        double capital = scanner.nextDouble();
+        
+        System.out.println("Informe o prazo (t): ");
+        double prazo = scanner.nextDouble();
+
+        //Fórmula
+        double taxa = (juros * 100) / (capital * prazo);
+
+        //Exibir resultados
+        exibirResultado("Taxa de juros (i)",
+                        "Juros (j): R$ " + df.format(juros),
+                        "Capital (c): R$ " + df.format(capital),
+                        "Prazo (n): " + prazo,
+                        "Taxa de juros (i): " + df.format(taxa) + "%");
+        
+        scanner.close();
+    }
+
     
 
 }
