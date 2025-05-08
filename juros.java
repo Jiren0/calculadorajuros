@@ -3,43 +3,74 @@ import java.util.Scanner;
 
 public class juros {
 
-    public static void main(String[] args) {
-        
-        //Declaração de variavel
-        double juros, capital, taxa, montante;
-        int tempo;
-
-        //Criação e instância do objeto de entrada e decimal
-        Scanner entrada = new Scanner (System.in);
-        DecimalFormat df = new DecimalFormat("0.00");
-
-        //Apresentação
-        System.out.println("\n\t\t\t -- Calculadora de Juros Simples --\n");
-
-        //Entrada
-        System.out.println("Informe a Capital: ");
-        capital = entrada.nextDouble();
-
-        System.out.println("Informe a Taxa De Juros: ");
-        taxa= entrada.nextDouble();
-
-        System.out.println("Informe o Prazo (Meses):");
-        tempo = entrada.nextDouble();
-
+    // Formatação para números decimais (2 casas)
+    private static final DecimalFormat df = new DecimalFormat("0.00");
     
-        //Calculo do Juros
-        juros = (capital * taxa * tempo);
-        montante = (capital + juros);
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+    
+    //Aprensentação
+    System.out.println("\n\t\t\t --CALCULADORA DE JUROS-- \t");
+    System.out.println("\nEscolha o que deseja calcular:");
+    System.out.println("1 - Juros (j)");
+    System.out.println("2 - Capital (c)");
+    System.out.println("3 - Taxa de juros (i)");
+    System.out.println("4 - Prazo (n)");
+    System.out.print("\nOpção: ");
 
-        //Saida
-        System.out.println("\n\t -- Resultados --");
-        System.out.println("\t Capital Inicial:\t R$ " + df.format(capital));
-        System.out.println("\t Taxa de Juros:\t\t" + taxa + "% ao mês");
-        System.out.println("\t Periodo:\t\t" + tempo + "Meses");
-        System.out.println("\t Juros Total: \tR$" + df.format(juros) );
-        System.out.println("\t Montante Final: \tR$"+ df.format(montante));
+    // Lê a opção do usuário
+    int opcao = scanner.nextInt();
 
-        //Fechar Entrada
-        entrada.close();
-    }   
+    //Direcionar para o cálculo escolhido
+    switch(opcao) {
+        case 1:
+            calcularJuros();  // Chama função para calcular juros
+            break;
+        case 2:
+            calcularCapital(); // Chama função para calcular capital
+            break;
+        case 3:
+            calcularTaxa();    // Chama função para calcular taxa
+            break;
+        case 4:
+            calcularPrazo();  // Chama função para calcular prazo
+            break;
+        default:
+            System.out.println("Opção inválida!");
+    }
+    
+    // Fecha o scanner
+    scanner.close();
+    }
+
+    //Calcular o juros
+    private static void calcularJuros() {
+        Scanner scanner = new Scanner(System.in);
+
+    //Titulo
+    System.out.println("\nCálculo de Juros (j)");
+    System.out.println("Fórmula: j = (c * i * n) / 100");
+
+    //Calculo do juros
+    System.out.print("Informe o capital (c): ");
+    double capital = scanner.nextDouble();
+
+    System.out.print("Informe a taxa de juros (i) em %: ");
+    double taxa = scanner.nextDouble();
+    
+    System.out.print("Informe o prazo (n): ");
+    double prazo = scanner.nextDouble();
+
+    // Calcula os juros usando a fórmula
+    double juros = (capital * taxa * prazo) / 100;
+
+          // Exibe os resultados formatados
+          exibirResultado("Juros (j)", 
+          "Capital (c): R$ " + df.format(capital),
+          "Taxa (i): " + taxa + "%",
+          "Prazo (n): " + prazo,
+          "Juros (j): R$ " + df.format(juros));
+
+scanner.close();
+}
 }
