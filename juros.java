@@ -73,4 +73,36 @@ public class juros {
 
 scanner.close();
 }
+
+//Calcular o Capital
+private static void calcularCapital() {
+    Scanner scanner = new Scanner (System.in);
+
+    //Titulo Capital
+    System.out.println("\nCalculo de Capital (C)");
+    System.out.println("Formula: c = j / (i * n / 100)");
+
+    System.out.println("Informe Juros (j): ");
+    double juros = scanner.nextDouble();
+
+    System.out.println("Informe a Taxa de Juros (i) em %: ");
+    double taxa = scanner.nextDouble();
+
+    System.out.println("Informemo prazo (n): ");
+    double prazo = scanner.nextDouble();
+
+    //Calculo da Capital]
+    double capital = juros / (taxa * prazo / 100);
+
+    //Exibe Resultados 
+    exibirResultado("Capital (c)",
+                    "Juros (j): R$ " + df.format(juros),
+                    "Taxa  (i): " + taxa + "%",
+                    "Prazo (n): " + prazo,
+                    "Capital (c:) R$" + df.format(capital));
+
+    scanner.close();
+    
+
+}
 }
