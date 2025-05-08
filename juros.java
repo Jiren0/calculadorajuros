@@ -133,7 +133,41 @@ private static void calcularCapital() {
         
         scanner.close();
     }
+       //Calcular Prazo (n)
+       private static void calcularPrazo(){
+        Scanner scanner = new Scanner(System.in);
 
+        // Título e Fórmula
+        System.out.println("\nCálculo de prazo (n)");
+        System.out.println("Fórmula: n = (j * 100) / (c * i)");
+
+        //Solicita e lê os valores necessários
+        System.out.println("Informe os juros (j): ");
+        double juros = scanner.nextDouble();
+
+        System.out.println(("Informe a capital (c) : "));
+        double capital = scanner.nextDouble();
+
+        System.out.println("Informe a taxa de juros (j) em %:");
+        double taxa = scanner.nextDouble();
+
+        //Cálculo
+        double prazo = (juros * 100 ) / (capital * taxa);
+
+        //Exibir Resultados
+        exibirResultado("Prazo (n) ",
+                        "Juros (j): R$ " + df.format(juros),
+                        "Capital (c): R$ " + df.format(capital),
+                        "Taxa (i): " + taxa + "%",
+                        "Prazo (n): " + df.format(prazo));
+
+    scanner.close();
+                        
+                  
+
+       }
+
+       
     
 
 }
