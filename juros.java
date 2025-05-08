@@ -6,7 +6,7 @@ public class juros {
     public static void main(String[] args) {
         
         //Declaração de variavel
-        double Juros, Capital, Taxa, Prazo;
+        double Juros, Capital, Taxa, Montante;
         int Tempo;
 
         //Criação e instância do objeto de entrada e decimal
@@ -19,9 +19,17 @@ public class juros {
         //Entrada
         System.out.println("Informe a Capital: ");
         Capital = entrada.nextDouble();
+
         System.out.println("Informe a Taxa De Juros: ");
         Taxa = entrada.nextDouble();
+
         System.out.println("Informe o Prazo (Meses):");
         Tempo = entrada.nextDouble();
+
+        //Calculo do Juros
+        Juros = (Capital * Taxa * Tempo);
+        Montante = (Capital + Juros);
+
+        
     }
 }
