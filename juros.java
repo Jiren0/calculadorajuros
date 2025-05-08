@@ -4,5 +4,6 @@ public class juros {
         
         //Declaração de variavel
         double Juros, Capital, Taxa, Prazo;
+        int Tempo;
     }
 }
